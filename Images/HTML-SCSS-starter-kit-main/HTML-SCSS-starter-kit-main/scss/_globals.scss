@@ -1,0 +1,74 @@
+html{
+    font-size: 100%; // let use control zoom level in browser
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; // https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+}
+
+// TOP = The html element has box-sizing: border-box and that all elements (*, *::before, *::after) are then going to inherit the box-sizing of their parent.
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.2rem;
+    color: white;
+}
+
+.container{
+    margin: 0 auto;
+    padding: 0 1.375rem;
+}
+
+// Resets
+input, button, ul, h1, h2, h3, h4, h5, p{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    list-style: none;
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+// Responsiveness
+.hide-for-mobile{
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
+
+.open{
+    display: block;
+    opacity: 1;
+}
+
+
+.close{
+    display: none;
+    opacity: 0;
+}
+
